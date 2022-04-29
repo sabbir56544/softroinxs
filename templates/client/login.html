@@ -1,0 +1,55 @@
+{% extends 'frontend/base.html' %}
+<!-- block  -->
+
+{% block content %}
+<!-- Start Main Section -->
+<main class="position-relative">
+	<div class="flex-card welcome-bg">
+		<i class="fas left-icon fa-angle-left"></i>
+		<div class="content">
+			<p class="mb-2">Login Page!</p>
+			<span class="subtext">Enter your email, you’ll need to verify this later</span>
+		</div>
+		<div class="sign-up-box">
+			<div class="login-link">
+				<form action="" method="post">
+					{% csrf_token %}
+					<div class="form-group email-group">
+						<label for="email">Email</label>
+						<input type="email" name="email" placeholder="Input email address" id="email">
+					</div>
+					<div class="form-group email-group position-relative" id="show_hide_password">
+						<a href="javascript:void(0)"><i class="far fa-eye-slash" aria-hidden="true"></i></a>
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" placeholder="Enter Password" id="password">
+					</div>
+					<input type="submit" value="Save"><br>
+				</form>
+
+			</div>
+
+
+		</div>
+	</div>
+</main>
+<!-- End Main Section -->
+
+
+<!-- Modal -->
+<div class=" modal fade " id="exampleModal " tabindex="-1 " aria-labelledby="exampleModalLabel " aria-hidden="true ">
+	<div class="modal-dialog modal-sm modal-dialog-centered ">
+		<div class="modal-content signup-modal ">
+			<div class="modal-body ">
+				<h3>Is this right?</h3>
+				<span>name@domain.com</span>
+				<div class="action-buttons ">
+					<a href=" " type="button " class="yes-btn ">Yes</a>
+					<button type="button " class="edit-btn ">Edit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'frontend/base.html' %}
+<!-- block  -->
+
+{% block content %}
+<!-- Start Main Section -->
+<main>
+	<div class="flex-card welcome-bg">
+		{% if user.is_authenticated %}
+		<div class="content">
+			<p>Hello,{{ user.username }} </p>
+			<p>Welcome to <br> Therapy.space</p>
+		</div>
+		{% else %}
+		<div class="content-box">
+			<a href="{% url 'client_signup' %}" class="client-box">
+				<p>I'M A <br> <span>Client</span></p>
+			</a>
+			<a href="{% url 'account_signup' %}" class="practitioner-box">
+				<p>I'M A <br> <span>Practitioner</span></p>
+			</a>
+		</div>
+		{% endif %}
+	</div>
+</main>
+<!-- End Main Section -->
+
+{% endblock %}

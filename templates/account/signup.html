@@ -1,0 +1,47 @@
+{% extends "frontend/base.html" %} {% load i18n %} {% block head_title %}{% trans "Signup" %}{% endblock %} {% block content %}
+
+
+<!-- Start Main Section -->
+<main class="position-relative">
+	<div class="flex-card welcome-bg">
+		<i class="fas left-icon fa-angle-left"></i>
+		<div class="content">
+			<p class="mb-2">Let’s get started!</p>
+			<span class="subtext">Enter your email, you’ll need to verify this later</span>
+		</div>
+		<div class="sign-up-box">
+			<div class="login-link">
+				<!-- <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+					{% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+					<button type="submit">{% trans "Sign Up" %} &raquo;</button>
+				</form> -->
+
+				<form action="" method="post">
+					{% csrf_token %}
+					<div class="form-group email-group">
+						<label for="email">Email</label>
+						<input type="email" name="email" placeholder="Input email address" id="email" />
+					</div>
+					<div class="form-group email-group position-relative" id="show_hide_password">
+						<a href="javascript:void(0)"><i class="far fa-eye-slash" aria-hidden="true"></i></a>
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password1" placeholder="Enter Password" id="password" />
+					</div>
+					{% if redirect_field_value %}
+					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+					<button type="submit">{% trans "Sign Up" %} &raquo;</button>
+				</form>
+			</div>
+			<p class="mt-3">
+				{% blocktrans %}Already have an account? Then please
+				<a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+			</p>
+		</div>
+
+
+	</div>
+</main>
+<!-- End Main Section -->
+
+{% endblock %}

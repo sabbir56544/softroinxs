@@ -1,0 +1,43 @@
+{% extends 'frontend/base.html' %}
+
+<!-- extends  -->
+{% load static %}
+<!-- block  -->
+
+{% block content %}
+<!-- Start Main Section -->
+
+
+<!-- Start Main Section -->
+<main class="position-relative">
+	<div class="flex-card welcome-bg">
+		<div class="tour-content">
+			<div class="img-box">
+				<img src="{% static 'img/tour-3.png' %}" alt="Tour">
+			</div>
+			<div class="details-box">
+				<p>Talk to your clients</p>
+				<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce <br> lacinia risus in ipsum mattis
+            cursus.
+          </span>
+			</div>
+		</div>
+		<div class="tour-details">
+			<div class="dot-box">
+				<ul>
+					<li><i class="fas fa-circle"></i></li>
+					<li><i class="fas fa-circle"></i></li>
+					<li class="active"><i class="fas fa-circle"></i></li>
+					<li><i class="fas fa-circle"></i></li>
+				</ul>
+			</div>
+			<div class="next-btn">
+				<a href="{% url 'take_notes' %}">Next</a>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- End Main Section -->
+
+<!-- End Main Section -->
+{% endblock %}

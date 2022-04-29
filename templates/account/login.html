@@ -1,0 +1,60 @@
+{% extends "frontend/base.html" %} {% load i18n %} {% load account socialaccount %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %} {% include "socialaccount/snippets/login_extra.html" %}
+
+
+
+
+<!-- Start Main Section -->
+<main class="position-relative">
+	<div class="flex-card welcome-bg">
+		<i class="fas left-icon fa-angle-left"></i>
+		<div class="content">
+			<p class="mb-2">Login</p>
+			<span class="subtext">Lorem ipsum dolor sing amet</span>
+		</div>
+		<div class="sign-up-box">
+			<div class="login-link">
+				<!-- <form class="login" method="POST" action="#">
+					{% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+					<div class="sign-up-link mt-0">
+
+						<button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+						<p> <a class="forget-password" href="{% url 'account_reset_password' %}">Forgot password</a></p>
+					</div>
+				</form> -->
+
+				<form action="{% url 'account_login' %}" method="post">
+					{% csrf_token %}
+					<div class="form-group email-group mb-4">
+						<label for="email">Email</label> {{ form.login }} </div>
+					<div class="form-group email-group position-relative" id="show_hide_password">
+						<a href="javascript:void(0)"><i class="far fa-eye-slash" aria-hidden="true"></i></a>
+						<label for="password">Password</label> {{ form.password }} </div>
+					{% if redirect_field_value %}
+					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+					<!-- <div class="sign-up-link mt-0">
+
+						<button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+						<p> <a class="forget-password" href="{% url 'account_reset_password' %}">Forgot password</a></p>
+					</div> -->
+					<div class="sign-up-link mt-0">
+						<button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+						<p> <a class="forget-password" href="{% url 'account_reset_password' %}">Forgot password</a></p>
+					</div>
+
+				</form>
+
+
+			</div>
+			<p>{% blocktrans %}If you have not created an account yet, then please
+				<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+			</p>
+
+
+		</div>
+	</div>
+</main>
+<!-- End Main Section -->
+
+
+{% endblock %}

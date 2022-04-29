@@ -1,0 +1,40 @@
+{% extends 'frontend/base.html' %}
+
+<!-- extends  -->
+{% load static %}
+<!-- block  -->
+
+{% block content %}
+<!-- Start Main Section -->
+
+
+<main class="position-relative">
+	<div class="flex-card welcome-bg">
+		<div class="tour-content">
+			<div class="img-box">
+				<img src="{% static 'img/tour-1.png' %}" alt="Tour">
+			</div>
+			<div class="details-box">
+				<p>Welcome to therapy.space!</p>
+				<span>An easy way to run your practice.</span>
+			</div>
+		</div>
+		<div class="tour-details">
+			<div class="dot-box">
+				<ul>
+					<li class="active"><i class="fas fa-circle"></i></li>
+					<li><i class="fas fa-circle"></i></li>
+					<li><i class="fas fa-circle"></i></li>
+					<li><i class="fas fa-circle"></i></li>
+				</ul>
+			</div>
+			<div class="next-btn">
+				<a href="{% url 'schedule_appointments' %}">Next</a>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+<!-- End Main Section -->
+{% endblock %}

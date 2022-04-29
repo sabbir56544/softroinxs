@@ -1,0 +1,42 @@
+@media (max-width: 1199.98px) {
+  .input-group-addon {
+    cursor: pointer;
+    display: none;
+}
+}
+
+@media (max-width: 991.98px) {
+  header .user-wrapper .user-links .user-connect ul li {  
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header .user-wrapper .user-links .user-name span,
+  header .user-wrapper .user-links .user-connect ul li a span {
+    display: none;
+  }
+  .session h1.title {
+    padding-bottom: 20px;
+  }
+  
+  
+}
+
+@media (max-width: 575.98px) {
+  header .user-wrapper .user-info ul li,
+  header .user-wrapper .user-links .user-connect {
+    margin-left: 15px;
+  }
+  header .user-wrapper .user-links .user-connect ul li {
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  header .user-wrapper .user-info ul li .number {
+    margin-right: 0;
+  }
+  .client-details-section .form-group label {
+    padding-left: 15px;
+  }
+  
+}
